@@ -33,3 +33,13 @@ dist/
 build/
 *.exe
 *.spec
+
+# Pastas pesadas de compilação
+dist/
+build/
+*.exe
+*.pkg
+
+# Pastas de ambiente e cache
+.venv/
+__pycache__/
