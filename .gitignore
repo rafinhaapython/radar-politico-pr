@@ -1,0 +1,28 @@
+# Ambiente virtual
+.venv/
+
+# Banco SQLite
+*.db
+
+# Dados grandes do TSE
+data/raw/
+data/extracted/
+data/processed/
+
+# Arquivos temporários Python
+__pycache__/
+*.pyc
+
+# Logs
+data/logs/
+# Python
+__pycache__/
+*.pyc
+
+# Banco
+*.db
+
+# Dados
+data/raw/
+data/extracted/
+data/processed/

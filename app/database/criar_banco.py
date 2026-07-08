@@ -1,10 +1,47 @@
-from app.database.database import engine
-from app.models.base import Base
+import sqlite3
+from pathlib import Path
 
-# Importa os modelos para que o SQLAlchemy os registre
-from app.models.candidatos import Candidato
+
+DB_PATH = Path("data/radar.db")
 
 
 def criar_banco():
-    Base.metadata.create_all(engine)
+    DB_PATH.parent.mkdir(exist_ok=True)
+
+    conn = sqlite3.connect(DB_PATH)
+
+    cursor = conn.cursor()
+
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS candidatos (
+
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+
+        sq_candidato TEXT,
+
+        ano INTEGER,
+
+        uf TEXT,
+
+        municipio TEXT,
+
+        cargo TEXT,
+
+        numero INTEGER,
+
+        nome TEXT,
+
+        nome_urna TEXT,
+
+        partido TEXT,
+
+        situacao TEXT
+
+    );
+    """)
+
+    conn.commit()
+
+    conn.close()
+
     print("Banco criado com sucesso!")
