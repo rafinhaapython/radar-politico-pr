@@ -26,3 +26,10 @@ __pycache__/
 data/raw/
 data/extracted/
 data/processed/
+
+.venv/
+__pycache__/
+dist/
+build/
+*.exe
+*.spec
